@@ -12,6 +12,11 @@
   aspect-ratio: 1 / 1;
   object-fit: cover;
   margin-bottom: 16px;
+  transition: opacity 200ms ease;
+}
+
+.gallery .main-image.fading {
+  opacity: 0.3;
 }
 
 .thumbnail-grid {

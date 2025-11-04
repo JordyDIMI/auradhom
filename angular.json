@@ -31,6 +31,11 @@
                   "glob": "*.png",
                   "input": "src/app",
                   "output": "/assets"
+                },
+                {
+                  "glob": "**/*",
+                  "input": "src/app/infos-T",
+                  "output": "/assets/infos-T"
                 }
               ],
               "index": "src/index.html",
