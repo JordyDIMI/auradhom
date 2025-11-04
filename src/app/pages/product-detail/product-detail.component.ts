@@ -1,4 +1,4 @@
-import { Component, Input, computed, inject, signal } from '@angular/core';
+import { Component, Input, computed, inject, signal, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product';
@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css']
 })
-export class ProductDetailComponent {
+export class ProductDetailComponent implements OnChanges {
   @Input() slug = '';
   
   private productService = inject(ProductService);
@@ -26,12 +26,16 @@ export class ProductDetailComponent {
 
   openAccordion = signal<string | null>(null);
 
-  constructor() {
-    this.productService.getProductBySlug(this.slug).subscribe(p => {
-      this.product.set(p);
-      if (p?.sizes.length === 1) this.selectedSize.set(p.sizes[0]);
-      if (p?.colors.length === 1) this.selectedColor.set(p.colors[0]);
-    });
+  constructor() {}
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['slug'] && this.slug) {
+      this.productService.getProductBySlug(this.slug).subscribe(p => {
+        this.product.set(p);
+        if (p?.sizes.length === 1) this.selectedSize.set(p.sizes[0]);
+        if (p?.colors.length === 1) this.selectedColor.set(p.colors[0]);
+      });
+    }
   }
 
   selectSize(size: string) {
