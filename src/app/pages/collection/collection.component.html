@@ -1,42 +1,6 @@
 <div class="collection-container container fade-in">
   <aside class="filters-sidebar" [class.open]="isFilterOpen()">
     <form [formGroup]="filterForm" class="filters-form">
-      <div class="filter-group">
-        <h3>Silhouette</h3>
-        @for(size of filterOptions.silhouette; track size) {
-          <div class="checkbox-item">
-            <input type="checkbox" [id]="'size-' + size" [value]="size" (change)="onCheckboxChange($event, 'silhouette')">
-            <label [for]="'size-' + size">{{ size }}</label>
-          </div>
-        }
-      </div>
-      <div class="filter-group">
-        <h3>Type</h3>
-        @for(type of filterOptions.type; track type) {
-          <div class="checkbox-item">
-            <input type="checkbox" [id]="'type-' + type" [value]="type" (change)="onCheckboxChange($event, 'type')">
-            <label [for]="'type-' + type">{{ type }}</label>
-          </div>
-        }
-      </div>
-      <div class="filter-group">
-        <h3>Matière</h3>
-        @for(mat of filterOptions.matiere; track mat) {
-          <div class="checkbox-item">
-            <input type="checkbox" [id]="'mat-' + mat" [value]="mat" (change)="onCheckboxChange($event, 'matiere')">
-            <label [for]="'mat-' + mat">{{ mat }}</label>
-          </div>
-        }
-      </div>
-      <div class="filter-group">
-        <h3>Teinte</h3>
-        @for(color of filterOptions.teinte; track color) {
-          <div class="checkbox-item">
-            <input type="checkbox" [id]="'color-' + color" [value]="color" (change)="onCheckboxChange($event, 'teinte')">
-            <label [for]="'color-' + color">{{ color }}</label>
-          </div>
-        }
-      </div>
     </form>
   </aside>
 
