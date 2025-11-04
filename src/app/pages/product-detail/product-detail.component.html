@@ -49,6 +49,10 @@
         <span>Commande sur WhatsApp</span>
       </button>
 
+      <button class="cta-whatsapp" (click)="addToCart()" style="margin-top:12px;">
+        <span>Ajouter au panier</span>
+      </button>
+
       @if(p.stock && p.stock < 20) {
         <p class="stock-info">{{ p.stock }} pièces restantes</p>
       }

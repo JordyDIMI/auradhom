@@ -5,6 +5,7 @@ import { Product } from '../../models/product';
 import { FormatFcfaPipe } from '../../pipes/format-fcfa.pipe';
 import { LucideAngularModule } from 'lucide-angular';
 import { Router } from '@angular/router';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -18,6 +19,7 @@ export class ProductDetailComponent implements OnChanges {
   
   private productService = inject(ProductService);
   private router = inject(Router);
+  private cart = inject(CartService);
 
   product = signal<Product | undefined>(undefined);
   selectedSize = signal<string | undefined>(undefined);
@@ -87,5 +89,24 @@ Merci.
     
     window.open(url, '_blank');
     this.router.navigate(['/envoye']);
+  }
+
+  addToCart() {
+    const p = this.product();
+    if (!p || !this.selectedSize() || !this.selectedColor()) {
+      alert('Veuillez sélectionner une taille et une couleur.');
+      return;
+    }
+    this.cart.add({
+      productId: p.id,
+      slug: p.slug,
+      name: p.name,
+      price: p.price,
+      image: this.currentImage() ?? p.image,
+      size: this.selectedSize(),
+      color: this.selectedColor()!.name,
+      quantity: this.quantity(),
+    });
+    alert('Ajouté au panier.');
   }
 }

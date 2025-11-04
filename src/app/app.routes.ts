@@ -14,6 +14,10 @@ export const APP_ROUTES: Routes = [
     loadComponent: () => import('./pages/product-detail/product-detail.component').then(c => c.ProductDetailComponent)
   },
   {
+    path: 'panier',
+    loadComponent: () => import('./pages/cart/cart.component').then(c => c.CartComponent)
+  },
+  {
     path: 'envoye',
     loadComponent: () => import('./pages/confirmation/confirmation.component').then(c => c.ConfirmationComponent)
   },

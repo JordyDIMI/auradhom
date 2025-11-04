@@ -7,6 +7,7 @@
       <a routerLink="/collection">Collection</a>
       <a routerLink="/a-propos">Philosophie</a>
       <a routerLink="/contact">Contact</a>
+      <a routerLink="/panier" class="cart-link">Panier ({{ cartCount() }})</a>
     </nav>
     <button class="mobile-nav-toggle" (click)="toggleMenu()">
       <span class="bar"></span>
@@ -18,6 +19,7 @@
       <a routerLink="/collection" (click)="toggleMenu()">Collection</a>
       <a routerLink="/a-propos" (click)="toggleMenu()">Philosophie</a>
       <a routerLink="/contact" (click)="toggleMenu()">Contact</a>
+      <a routerLink="/panier" (click)="toggleMenu()">Panier ({{ cartCount() }})</a>
     </div>
   }
 </header>
