@@ -2,13 +2,6 @@ import { Injectable, signal } from '@angular/core';
 import { of } from 'rxjs';
 import { Product } from '../models/product';
 
-// Mappe les images locales placées dans src/app/* en URLs servies par Angular
-const IMG_BLANC = new URL('../blanc.png', import.meta.url).toString();
-const IMG_NOIR = new URL('../noir.png', import.meta.url).toString();
-const IMG_BEIGE = new URL('../biege.png', import.meta.url).toString(); // fichier nommé "biege.png"
-const IMG_MARRON = new URL('../marron.png', import.meta.url).toString();
-const IMG_GRIS = new URL('../gris.png', import.meta.url).toString();
-
 const PRODUCTS: Product[] = [
   {
     id: 1,
@@ -16,8 +9,8 @@ const PRODUCTS: Product[] = [
     slug: 't-shirt-blanc',
     price: 10000,
     description: 'Coton 180 g/m². Coupe droite. Essentiel.',
-    image: IMG_BLANC,
-    gallery: [IMG_BLANC],
+    image: 'assets/blanc.png',
+    gallery: ['assets/blanc.png'],
     details: { composition: '100% Coton', maintenance: 'Lavage à 30°.', origin: 'Sénégal' },
     type: 'T-shirt',
     material: 'Coton lourd',
@@ -30,8 +23,8 @@ const PRODUCTS: Product[] = [
     slug: 't-shirt-noir',
     price: 10000,
     description: 'Coton 180 g/m². Coupe droite. Essentiel.',
-    image: IMG_NOIR,
-    gallery: [IMG_NOIR],
+    image: 'assets/noir.png',
+    gallery: ['assets/noir.png'],
     details: { composition: '100% Coton', maintenance: 'Lavage à 30°.', origin: 'Sénégal' },
     type: 'T-shirt',
     material: 'Coton lourd',
@@ -44,8 +37,8 @@ const PRODUCTS: Product[] = [
     slug: 't-shirt-beige',
     price: 10000,
     description: 'Coton 180 g/m². Coupe droite. Essentiel.',
-    image: IMG_BEIGE,
-    gallery: [IMG_BEIGE],
+    image: 'assets/biege.png',
+    gallery: ['assets/biege.png'],
     details: { composition: '100% Coton', maintenance: 'Lavage à 30°.', origin: 'Sénégal' },
     type: 'T-shirt',
     material: 'Coton lourd',
@@ -58,8 +51,8 @@ const PRODUCTS: Product[] = [
     slug: 't-shirt-marron',
     price: 10000,
     description: 'Coton 180 g/m². Coupe droite. Essentiel.',
-    image: IMG_MARRON,
-    gallery: [IMG_MARRON],
+    image: 'assets/marron.png',
+    gallery: ['assets/marron.png'],
     details: { composition: '100% Coton', maintenance: 'Lavage à 30°.', origin: 'Sénégal' },
     type: 'T-shirt',
     material: 'Coton lourd',
@@ -72,8 +65,8 @@ const PRODUCTS: Product[] = [
     slug: 't-shirt-gris',
     price: 10000,
     description: 'Coton 180 g/m². Coupe droite. Essentiel.',
-    image: IMG_GRIS,
-    gallery: [IMG_GRIS],
+    image: 'assets/gris.png',
+    gallery: ['assets/gris.png'],
     details: { composition: '100% Coton', maintenance: 'Lavage à 30°.', origin: 'Sénégal' },
     type: 'T-shirt',
     material: 'Coton lourd',
