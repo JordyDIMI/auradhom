@@ -5,75 +5,88 @@ import { Product } from '../models/product';
 const PRODUCTS: Product[] = [
   {
     id: 1,
-    name: 'T-shirt Silence',
-    slug: 't-shirt-silence',
-    price: 45000,
-    description: 'Coton 280 g/m². Coupe droite. Essence pure.',
-    image: 'https://img-wrapper.vercel.app/image?url=https://placehold.co/800x800/000000/FFFFFF.png?text=Silence',
-    gallery: ['https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/1C1C1C/FFFFFF.png?text=Texture', 'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/1C1C1C/FFFFFF.png?text=Couture'],
-    details: { composition: '100% Coton Organique', maintenance: 'Lavage à 30°. Ne pas sécher en machine.', origin: 'Portugal' },
-    stock: 18,
+    name: 'T-shirt Blanc',
+    slug: 't-shirt-blanc',
+    price: 10000,
+    description: 'Coton 180 g/m². Coupe droite. Essentiel.',
+    image: 'https://img-wrapper.vercel.app/image?url=https://placehold.co/800x800/FFFFFF/000000.png?text=Blanc',
+    gallery: [
+      'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/FFFFFF/000000.png?text=Blanc+Face',
+      'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/FFFFFF/000000.png?text=Blanc+Dos'
+    ],
+    details: { composition: '100% Coton', maintenance: 'Lavage à 30°.', origin: 'Sénégal' },
     type: 'T-shirt',
     material: 'Coton lourd',
-    colors: [{ name: 'Noir', hex: '#000000' }, { name: 'Blanc cassé', hex: '#F5F5DC' }],
-    sizes: ['XS', 'S', 'M', 'L', 'XL']
+    colors: [{ name: 'Blanc', hex: '#FFFFFF' }],
+    sizes: ['S', 'M', 'L', 'XL']
   },
   {
     id: 2,
-    name: 'Hoodie Aura',
-    slug: 'hoodie-aura',
-    price: 95000,
-    description: 'Coton 480 g/m². Coupe architecturale. Présence.',
-    image: 'https://img-wrapper.vercel.app/image?url=https://placehold.co/800x800/000000/FFFFFF.png?text=Aura',
-    gallery: ['https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/1C1C1C/FFFFFF.png?text=Texture', 'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/1C1C1C/FFFFFF.png?text=Couture'],
-    details: { composition: '85% Coton, 15% Polyester recyclé', maintenance: 'Lavage à froid. Séchage à plat.', origin: 'Portugal' },
-    type: 'Hoodie',
+    name: 'T-shirt Noir',
+    slug: 't-shirt-noir',
+    price: 10000,
+    description: 'Coton 180 g/m². Coupe droite. Essentiel.',
+    image: 'https://img-wrapper.vercel.app/image?url=https://placehold.co/800x800/000000/FFFFFF.png?text=Noir',
+    gallery: [
+      'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/000000/FFFFFF.png?text=Noir+Face',
+      'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/000000/FFFFFF.png?text=Noir+Dos'
+    ],
+    details: { composition: '100% Coton', maintenance: 'Lavage à 30°.', origin: 'Sénégal' },
+    type: 'T-shirt',
     material: 'Coton lourd',
-    colors: [{ name: 'Noir', hex: '#000000' }, { name: 'Gris anthracite', hex: '#36454F' }],
-    sizes: ['S', 'M', 'L', 'XL', 'XXL']
-  },
-  {
-    id: 3,
-    name: 'Pantalon Équilibre',
-    slug: 'pantalon-equilibre',
-    price: 110000,
-    description: 'Laine froide. Ligne impeccable. Stature.',
-    image: 'https://img-wrapper.vercel.app/image?url=https://placehold.co/800x800/000000/FFFFFF.png?text=Equilibre',
-    gallery: ['https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/1C1C1C/FFFFFF.png?text=Texture', 'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/1C1C1C/FFFFFF.png?text=Couture'],
-    details: { composition: '100% Laine vierge', maintenance: 'Nettoyage à sec uniquement.', origin: 'Portugal' },
-    stock: 12,
-    type: 'Pantalon',
-    material: 'Laine',
     colors: [{ name: 'Noir', hex: '#000000' }],
     sizes: ['S', 'M', 'L', 'XL']
   },
   {
+    id: 3,
+    name: 'T-shirt Beige',
+    slug: 't-shirt-beige',
+    price: 10000,
+    description: 'Coton 180 g/m². Coupe droite. Essentiel.',
+    image: 'https://img-wrapper.vercel.app/image?url=https://placehold.co/800x800/D8D2C9/000000.png?text=Beige',
+    gallery: [
+      'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/D8D2C9/000000.png?text=Beige+Face',
+      'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/D8D2C9/000000.png?text=Beige+Dos'
+    ],
+    details: { composition: '100% Coton', maintenance: 'Lavage à 30°.', origin: 'Sénégal' },
+    type: 'T-shirt',
+    material: 'Coton lourd',
+    colors: [{ name: 'Beige', hex: '#D8D2C9' }],
+    sizes: ['S', 'M', 'L', 'XL']
+  },
+  {
     id: 4,
-    name: 'Surchemise Minimal',
-    slug: 'surchemise-minimal',
-    price: 135000,
-    description: 'Cuir végétal souple. Structure affirmée. Contrôle.',
-    image: 'https://img-wrapper.vercel.app/image?url=https://placehold.co/800x800/000000/FFFFFF.png?text=Minimal',
-    gallery: ['https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/1C1C1C/FFFFFF.png?text=Texture', 'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/1C1C1C/FFFFFF.png?text=Couture'],
-    details: { composition: '60% PU, 40% Polyester', maintenance: 'Nettoyage avec un chiffon humide.', origin: 'Portugal' },
-    type: 'Surchemise',
-    material: 'Cuir végétal',
-    colors: [{ name: 'Noir', hex: '#000000' }],
-    sizes: ['M', 'L', 'XL']
+    name: 'T-shirt Marron',
+    slug: 't-shirt-marron',
+    price: 10000,
+    description: 'Coton 180 g/m². Coupe droite. Essentiel.',
+    image: 'https://img-wrapper.vercel.app/image?url=https://placehold.co/800x800/6B4423/FFFFFF.png?text=Marron',
+    gallery: [
+      'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/6B4423/FFFFFF.png?text=Marron+Face',
+      'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/6B4423/FFFFFF.png?text=Marron+Dos'
+    ],
+    details: { composition: '100% Coton', maintenance: 'Lavage à 30°.', origin: 'Sénégal' },
+    type: 'T-shirt',
+    material: 'Coton lourd',
+    colors: [{ name: 'Marron', hex: '#6B4423' }],
+    sizes: ['S', 'M', 'L', 'XL']
   },
   {
     id: 5,
-    name: 'Casquette Unité',
-    slug: 'casquette-unite',
-    price: 35000,
-    description: 'Coton sergé. Logo brodé ton sur ton. Focus.',
-    image: 'https://img-wrapper.vercel.app/image?url=https://placehold.co/800x800/000000/FFFFFF.png?text=Unite',
-    gallery: ['https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/1C1C1C/FFFFFF.png?text=Texture', 'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/1C1C1C/FFFFFF.png?text=Couture'],
-    details: { composition: '100% Coton', maintenance: 'Lavage à la main.', origin: 'Portugal' },
-    type: 'Casquette',
+    name: 'T-shirt Gris',
+    slug: 't-shirt-gris',
+    price: 10000,
+    description: 'Coton 180 g/m². Coupe droite. Essentiel.',
+    image: 'https://img-wrapper.vercel.app/image?url=https://placehold.co/800x800/808080/FFFFFF.png?text=Gris',
+    gallery: [
+      'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/808080/FFFFFF.png?text=Gris+Face',
+      'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/808080/FFFFFF.png?text=Gris+Dos'
+    ],
+    details: { composition: '100% Coton', maintenance: 'Lavage à 30°.', origin: 'Sénégal' },
+    type: 'T-shirt',
     material: 'Coton lourd',
-    colors: [{ name: 'Noir', hex: '#000000' }, { name: 'Beige sable', hex: '#D8D2C9' }],
-    sizes: ['Unique']
+    colors: [{ name: 'Gris', hex: '#808080' }],
+    sizes: ['S', 'M', 'L', 'XL']
   }
 ];
 
@@ -94,10 +107,10 @@ export class ProductService {
 
   getFilterOptions() {
     return {
-      silhouette: ['X', 'S', 'M', 'L', 'XL', 'XXL', '3XL'],
-      type: ['T-shirt',],
-      matiere: ['Coton lourd', 'Laine', ],
-      teinte: ['Noir', 'Blanc', 'Gris', 'Beige']
+      silhouette: ['S', 'M', 'L', 'XL'],
+      type: ['T-shirt'],
+      matiere: ['Coton lourd'],
+      teinte: ['Noir', 'Blanc', 'Beige', 'Marron', 'Gris']
     };
   }
 }
