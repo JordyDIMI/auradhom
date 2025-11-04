@@ -1,12 +1,56 @@
 .collection-container {
-  display: flex;
-  gap: 32px;
+  display: block;
 }
 
-.filters-sidebar {
-  display: none; /* Hidden on mobile by default */
-  width: 250px;
-  flex-shrink: 0;
+/* Section d'informations de la collection */
+.collection-info-section {
+  position: relative;
+  border: 1px solid var(--gray-dark);
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 40px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.00));
+}
+
+.collection-info-inner {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.collection-title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  margin-bottom: 16px;
+}
+
+.collection-lead {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.collection-text {
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.collection-features {
+  display: grid;
+  gap: 6px;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+.collection-cta {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 10px 16px;
+  border: 1px solid var(--text-secondary);
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .filters-form .filter-group {
@@ -32,20 +76,9 @@
   flex-grow: 1;
 }
 
-.mobile-filter-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
-  border-bottom: 1px solid var(--gray-dark);
-  padding-bottom: 16px;
-}
+/* Ancienne barre mobile filtrage retirée */
 
-.mobile-filter-header button, .mobile-filter-header p {
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-}
+/* -- */
 
 .product-grid {
   display: grid;
@@ -80,6 +113,19 @@
   align-items: center;
 }
 
+.product-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.order-hint {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+}
+
 .product-name {
   font-family: var(--font-heading);
   font-size: 1rem;
@@ -107,15 +153,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
   }
-  .mobile-filter-header {
-    display: none;
-  }
-  .filters-sidebar {
-    display: block;
-  }
-  .filters-sidebar.open { /* Mobile accordion style */
-    display: none;
-  }
+  /* Suppression des styles liés aux filtres */
 }
 
 @media (min-width: 1440px) {
@@ -124,17 +162,4 @@
   }
 }
 
-@media (max-width: 1023px) {
-  .collection-container {
-    flex-direction: column;
-  }
-  .filters-sidebar {
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
-  }
-  .filters-sidebar.open {
-    max-height: 1000px; /* Large enough for content */
-  }
-}
+/* Suppression des styles responsive de la sidebar filtres */
