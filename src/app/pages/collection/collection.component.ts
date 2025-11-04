@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { ProductService } from '../../services/product.service';
+import { PreloadService } from '../../services/preload.service';
 import { Product } from '../../models/product';
 import { FormatFcfaPipe } from '../../pipes/format-fcfa.pipe';
 
@@ -15,6 +16,7 @@ import { FormatFcfaPipe } from '../../pipes/format-fcfa.pipe';
 })
 export class CollectionComponent {
   private productService = inject(ProductService);
+  private preloadService = inject(PreloadService);
   private fb = inject(FormBuilder);
 
   products = signal<Product[]>([]);
@@ -48,6 +50,8 @@ export class CollectionComponent {
 
   constructor() {
     this.productService.getProducts().subscribe(data => this.products.set(data));
+    // Précharge toutes les images de la collection (infos-T/1 *.jpg, infos-T/2 *.png)
+    this.preloadService.preloadCollectionImages();
   }
 
   onCheckboxChange(event: Event, controlName: string) {

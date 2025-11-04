@@ -39,46 +39,16 @@ export class ProductDetailComponent implements OnChanges {
     }
   }
 
-  currentImage = computed(() => {
-    const p = this.product();
-    const size = this.selectedSize();
-    const color = this.selectedColor();
-    if (!p || !size || !color) return p?.image;
-    const dir = (size === 'S' || size === 'M') ? '1' : '2';
-    const colorFile = this.normalizeColorToFilename(color.name);
-    return `assets/infos-T/${dir}/${colorFile}.jpg`;
-  });
-
-  private normalizeColorToFilename(colorName: string) {
-    const key = colorName.toLowerCase().replace(/é/g, 'e').replace(/\s+/g, '');
-    // mapping explicite pour robustesse
-    const map: Record<string, string> = {
-      'blanc': 'blanc',
-      'noir': 'noir',
-      'beige': 'beige',
-      'marron': 'marron',
-      'gris': 'gris'
-    };
-    return map[key] ?? key;
-  }
-
   selectSize(size: string) {
     this.selectedSize.set(size);
-    this.triggerImageFade();
   }
 
   selectColor(color: { name: string; hex: string }) {
     this.selectedColor.set(color);
-    this.triggerImageFade();
   }
 
   toggleAccordion(section: string) {
     this.openAccordion.set(this.openAccordion() === section ? null : section);
-  }
-
-  private triggerImageFade() {
-    this.imageFade.set(true);
-    setTimeout(() => this.imageFade.set(false), 200);
   }
 
   orderOnWhatsApp() {
