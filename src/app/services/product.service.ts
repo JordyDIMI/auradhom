@@ -2,6 +2,13 @@ import { Injectable, signal } from '@angular/core';
 import { of } from 'rxjs';
 import { Product } from '../models/product';
 
+// Mappe les images locales placées dans src/app/* en URLs servies par Angular
+const IMG_BLANC = new URL('../blanc.png', import.meta.url).toString();
+const IMG_NOIR = new URL('../noir.png', import.meta.url).toString();
+const IMG_BEIGE = new URL('../biege.png', import.meta.url).toString(); // fichier nommé "biege.png"
+const IMG_MARRON = new URL('../marron.png', import.meta.url).toString();
+const IMG_GRIS = new URL('../gris.png', import.meta.url).toString();
+
 const PRODUCTS: Product[] = [
   {
     id: 1,
@@ -9,11 +16,8 @@ const PRODUCTS: Product[] = [
     slug: 't-shirt-blanc',
     price: 10000,
     description: 'Coton 180 g/m². Coupe droite. Essentiel.',
-    image: 'https://img-wrapper.vercel.app/image?url=https://placehold.co/800x800/FFFFFF/000000.png?text=Blanc',
-    gallery: [
-      'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/FFFFFF/000000.png?text=Blanc+Face',
-      'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/FFFFFF/000000.png?text=Blanc+Dos'
-    ],
+    image: IMG_BLANC,
+    gallery: [IMG_BLANC],
     details: { composition: '100% Coton', maintenance: 'Lavage à 30°.', origin: 'Sénégal' },
     type: 'T-shirt',
     material: 'Coton lourd',
@@ -26,11 +30,8 @@ const PRODUCTS: Product[] = [
     slug: 't-shirt-noir',
     price: 10000,
     description: 'Coton 180 g/m². Coupe droite. Essentiel.',
-    image: 'https://img-wrapper.vercel.app/image?url=https://placehold.co/800x800/000000/FFFFFF.png?text=Noir',
-    gallery: [
-      'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/000000/FFFFFF.png?text=Noir+Face',
-      'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/000000/FFFFFF.png?text=Noir+Dos'
-    ],
+    image: IMG_NOIR,
+    gallery: [IMG_NOIR],
     details: { composition: '100% Coton', maintenance: 'Lavage à 30°.', origin: 'Sénégal' },
     type: 'T-shirt',
     material: 'Coton lourd',
@@ -43,11 +44,8 @@ const PRODUCTS: Product[] = [
     slug: 't-shirt-beige',
     price: 10000,
     description: 'Coton 180 g/m². Coupe droite. Essentiel.',
-    image: 'https://img-wrapper.vercel.app/image?url=https://placehold.co/800x800/D8D2C9/000000.png?text=Beige',
-    gallery: [
-      'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/D8D2C9/000000.png?text=Beige+Face',
-      'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/D8D2C9/000000.png?text=Beige+Dos'
-    ],
+    image: IMG_BEIGE,
+    gallery: [IMG_BEIGE],
     details: { composition: '100% Coton', maintenance: 'Lavage à 30°.', origin: 'Sénégal' },
     type: 'T-shirt',
     material: 'Coton lourd',
@@ -60,11 +58,8 @@ const PRODUCTS: Product[] = [
     slug: 't-shirt-marron',
     price: 10000,
     description: 'Coton 180 g/m². Coupe droite. Essentiel.',
-    image: 'https://img-wrapper.vercel.app/image?url=https://placehold.co/800x800/6B4423/FFFFFF.png?text=Marron',
-    gallery: [
-      'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/6B4423/FFFFFF.png?text=Marron+Face',
-      'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/6B4423/FFFFFF.png?text=Marron+Dos'
-    ],
+    image: IMG_MARRON,
+    gallery: [IMG_MARRON],
     details: { composition: '100% Coton', maintenance: 'Lavage à 30°.', origin: 'Sénégal' },
     type: 'T-shirt',
     material: 'Coton lourd',
@@ -77,11 +72,8 @@ const PRODUCTS: Product[] = [
     slug: 't-shirt-gris',
     price: 10000,
     description: 'Coton 180 g/m². Coupe droite. Essentiel.',
-    image: 'https://img-wrapper.vercel.app/image?url=https://placehold.co/800x800/808080/FFFFFF.png?text=Gris',
-    gallery: [
-      'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/808080/FFFFFF.png?text=Gris+Face',
-      'https://img-wrapper.vercel.app/image?url=https://placehold.co/400x400/808080/FFFFFF.png?text=Gris+Dos'
-    ],
+    image: IMG_GRIS,
+    gallery: [IMG_GRIS],
     details: { composition: '100% Coton', maintenance: 'Lavage à 30°.', origin: 'Sénégal' },
     type: 'T-shirt',
     material: 'Coton lourd',
