@@ -75,7 +75,7 @@ Je commande :
 Prix unitaire : ${formatFCFA(price)}
 Total : ${formatFCFA(price * qty)}
 
-Livraison : [à préciser]
+Livraison : 0 FCFA
 
 Prénom :
 Adresse complète :

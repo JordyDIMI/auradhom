@@ -22,7 +22,10 @@
 
     <div class="cart-footer">
       <button class="clear" (click)="clear()">Vider le panier</button>
-      <div class="total">Total: <strong>{{ total() | formatFcfa }}</strong></div>
+      <div class="total">
+        <div>Livraison: <strong>0 FCFA</strong></div>
+        <div>Total: <strong>{{ total() | formatFcfa }}</strong></div>
+      </div>
     </div>
   }
 </div>
