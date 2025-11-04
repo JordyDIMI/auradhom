@@ -94,10 +94,10 @@ export class ProductService {
 
   getFilterOptions() {
     return {
-      silhouette: ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
-      type: ['T-shirt', 'Hoodie', 'Pantalon', 'Surchemise', 'Casquette'],
-      matiere: ['Coton lourd', 'Laine', 'Cuir végétal'],
-      teinte: ['Noir', 'Blanc cassé', 'Gris anthracite', 'Beige sable']
+      silhouette: ['X', 'S', 'M', 'L', 'XL', 'XXL', '3XL'],
+      type: ['T-shirt',],
+      matiere: ['Coton lourd', 'Laine', ],
+      teinte: ['Noir', 'Blanc', 'Gris', 'Beige']
     };
   }
 }
